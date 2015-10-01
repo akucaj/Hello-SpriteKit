@@ -31,14 +31,14 @@ class GameScene: SKScene {
             sprite.yScale = 0.5
             sprite.position = location
             
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
+            let rotate = SKAction.rotateByAngle(CGFloat(M_PI), duration:1.0)
             let moveUp = SKAction.moveByX(0, y: 100.0, duration: 0.5)
             let zoom = SKAction.scaleTo(1.0, duration: 0.25)
             let pause = SKAction.waitForDuration(0.5)
             let fadeAway = SKAction.fadeOutWithDuration(0.25)
             let remove = SKAction.removeFromParent()
             
-            let sequences = SKAction.sequence([action, moveUp, zoom, pause, fadeAway, remove])
+            let sequences = SKAction.sequence([rotate, moveUp, zoom, pause, fadeAway, remove])
             sprite.runAction(sequences)
             
             self.addChild(sprite)
